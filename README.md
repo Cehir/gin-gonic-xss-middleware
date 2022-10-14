@@ -74,25 +74,15 @@ func main() {
 
 ## Data
 
-Currently, it removes (deletes) all HTML and malicious detected input from user input on 
-
-the submitted request to the server. 
-
-It handles three Request types:
+Currently, it removes (deletes) all HTML and malicious detected input from user input on  the submitted request to the server. It handles three Request types:
 
 * JSON requests - Content-Type application/json
-
 * Form Encoded - Content-Type application/x-www-form-urlencoded
-
 * Multipart Form Data - Content-Type multipart/form-data
 
-A future plan is have a feature to store all user submitted data intact and have the option to 
-
-filter it out on the http Response, so you can choose your preference. In other words: data would be stored in the database as it was submitted and removed in Responses back to the user. Pros: data integrity. Cons: XSS exploits still present.
-
+A future plan is have a feature to store all user submitted data intact and have the option to filter it out on the http response, so you can choose your preference. In other words: data would be stored in the database as it was submitted and removed in Responses back to the user. Pros: data integrity. Cons: XSS exploits still present.
 
 ## NOTE: This is beta level code with minimal actual real world usage
-
 
 ## Contributing 
 
@@ -100,7 +90,7 @@ You are welcome to contribute to this project.
 
 Please update/add tests as appropriate.
 
-Send pull request against the Develop branch.
+Send pull request against the develop branch.
 
 Please use the same formatting as the Go authors. Run code through gofmt before submitting. 
 
