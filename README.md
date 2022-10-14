@@ -97,9 +97,9 @@ A future plan is have a feature to store all user submitted data intact and have
 
 Thanks to dvwright (https://github.com/dvwright/xss-mw) from which this repository was forked.
 
-https://github.com/goware/jsonp
-https://github.com/appleboy/gin-jwt/tree/v2.1.1
-https://github.com/microcosm-cc/bluemonday
+https://github.com/goware/jsonp <br>
+https://github.com/appleboy/gin-jwt/tree/v2.1.1 <br>
+https://github.com/microcosm-cc/bluemonday <br>
 
 Learning source: https://static.googleusercontent.com/intl/hu/about/appsecurity/learning/xss/
 
