@@ -12,7 +12,12 @@ The XSS filtering is performed by HTML sanitizer [Bluemonday](https://github.com
 
 The default is to the strictest policy - StrictPolicy()
 
-# How To Use it?
+## Installation
+
+`go get -u github.com/araujo88/gin-gonic-xss-middleware` <br>
+`go mod tidy`
+
+## How To Use it?
 
 Using the defaults,
 It will skip filtering for a field named 'password' but will run the filter on everything else.
@@ -73,7 +78,7 @@ func main() {
 
 ```
 
-# Data
+## Data
 
 Currently, it removes (deletes) all HTML and malicious detected input from user input on 
 
@@ -92,7 +97,7 @@ A future plan is have a feature to store all user submitted data intact and have
 filter it out on the http Response, so you can choose your preference. In other words: data would be stored in the database as it was submitted and removed in Responses back to the user. Pros: data integrity. Cons: XSS exploits still present.
 
 
-# NOTE: This is beta level code with minimal actual real world usage
+## NOTE: This is beta level code with minimal actual real world usage
 
 
 ## Contributing 
