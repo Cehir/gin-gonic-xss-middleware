@@ -1,4 +1,4 @@
-# Xss Middleware 
+# XSS Middleware 
 
 XssMw is an middleware written in [Golang](https://golang.org/) for the [Gin](https://github.com/gin-gonic/gin) web framework. Although, it should be useable with any Go web framework which utilizes Golang's "net/http" native library in a similiar way to Gin. The idea behind XssMw is to "auto remove XSS" from user submitted input. It's applied on http GET, POST, PATCH and PUT requests only.
 
