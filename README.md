@@ -12,7 +12,6 @@ The XSS filtering is performed by HTML sanitizer [Bluemonday](https://github.com
 
 The default is to the strictest policy - StrictPolicy()
 
-
 # How To Use it?
 
 Using the defaults,
@@ -42,12 +41,10 @@ func main() {
 
 ```
 
-
-Using some config options,
-here It will skip filtering for a fields named 'password', "create_date" and "token" but will run the filter 
-on everything else.
+Using some config options, here It will skip filtering for a fields named 'password', "create_date" and "token" but will run the filter  on everything else.
 
 Uses Bluemonday UGCPolicy
+
 
 ```go
 package main
@@ -88,15 +85,12 @@ It handles three Request types:
 
 * Multipart Form Data - Content-Type multipart/form-data
 
-
 A future plan is have a feature to store all user submitted data intact and have the option to 
 
-filter it out on the http Response, so you can choose your preference.  - in other words - 
-data would be stored in the database as it was submitted and removed in Responses back to the user.
-pros: data integrity, cons: XSS exploits still present
+filter it out on the http Response, so you can choose your preference. In other words: data would be stored in the database as it was submitted and removed in Responses back to the user. Pros: data integrity. Cons: XSS exploits still present.
 
 
-# NOTE: This is Beta level code with minimal actual real world usage
+# NOTE: This is beta level code with minimal actual real world usage
 
 
 ## Contributing 
@@ -112,27 +106,9 @@ Please use the same formatting as the Go authors. Run code through gofmt before 
 Thanks
 
 
-### Misc ###
+## Acknowledgements
 
-Thanks to
-
-https://github.com/goware/jsonp
-
-https://github.com/appleboy/gin-jwt/tree/v2.1.1
-
-Whose source I read throughly to aid in writing this
-
-and of course
-
-https://github.com/microcosm-cc/bluemonday
-
-and the gin middleware
-
-and
-
-https://static.googleusercontent.com/intl/hu/about/appsecurity/learning/xss/
-
-for inspiring me to to look for and not finding a framework, so attempting to write one.
+Thanks to dvwright (https://github.com/dvwright/xss-mw) from which this repository was forked.
 
 > A note on manually escaping input
 > Writing your own code for escaping input and then properly and consistently applying it is extremely difficult. 
