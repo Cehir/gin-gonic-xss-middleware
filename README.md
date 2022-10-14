@@ -21,8 +21,10 @@ Uses the Bluemonday strictest policy - StrictPolicy()
 ```go
 package main
 
-import "github.com/gin-gonic/gin"
-import "araujo88/gin-gonic-xss-middleware"
+import (
+    xss "github.com/araujo88/gin-gonic-xss-middleware"
+    "github.com/gin-gonic/gin"
+)
 
 func main() {
     r := gin.Default()
