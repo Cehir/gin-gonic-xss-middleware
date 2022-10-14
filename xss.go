@@ -170,7 +170,7 @@ func (mw *XssMw) XssRemove(c *gin.Context) error {
 
 	// https://golang.org/src/net/http/request.go
 	// check expected application type
-	if ReqMethod == "POST" || ReqMethod == "PUT" {
+	if ReqMethod == "POST" || ReqMethod == "PUT" || ReqMethod == "PATCH" {
 		//ReqURL := c.Request.URL
 		//fmt.Printf("%v URL\n", ReqURL)
 
