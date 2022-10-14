@@ -50,8 +50,10 @@ Uses Bluemonday UGCPolicy
 ```go
 package main
 
-import "gopkg.in/gin-gonic/gin.v1"
-import "github.com/dvwright/xss-mw"
+import (
+    xss "github.com/araujo88/gin-gonic-xss-middleware"
+    "github.com/gin-gonic/gin"
+)
 
 func main() {
     r := gin.Default()
