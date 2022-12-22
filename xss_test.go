@@ -155,6 +155,23 @@ func newServer(xssMdlwr XssMw) *gin.Engine {
 		c.JSON(201, users)
 	})
 
+	r.POST("/numbers", func(c *gin.Context) {
+		var numbers struct {
+			IntS    []int     `json:"intSlice" form:"intSlice"`
+			FloatS  []float64 `json:"floatSlice" form:"floatSlice"`
+			StringS []string  `json:"stringSlice" form:"stringSlice"`
+			BoolS   []bool    `json:"boolSlice" form:"boolSlice"`
+		}
+		// fmt.Printf("%#v", users)
+		err := c.Bind(&numbers)
+		if err != nil {
+			//fmt.Println(err)
+			c.JSON(404, gin.H{"msg": "Bind Failed."})
+			return
+		}
+		c.JSON(200, numbers)
+	})
+
 	return r
 }
 
@@ -809,6 +826,29 @@ func TestUGCPolityAllowSomeHTMLOnPost(t *testing.T) {
 
 	expect := fmt.Sprintf(expStr, user, email, password, cmnt_clnd, cre_at)
 	assert.JSONEq(t, expect, resp.Body.String())
+}
+
+func TestNumberSlices(t *testing.T) {
+	// don't want to see log message while running tests
+	log.SetOutput(io.Discard)
+	defer log.SetOutput(os.Stderr)
+
+	var xssMdlwr = XssMw{
+		BmPolicy: "UGCPolicy",
+	}
+	s := newServer(xssMdlwr)
+
+	oParams := `{"intSlice":[1,2,3],"floatSlice":[1.1,2.2,3.3],"stringSlice":["one","two","three"],"boolSlice":[true,false,true]}`
+	expected := `{"intSlice":[1,2,3],"floatSlice":[1.1,2.2,3.3],"stringSlice":["one","two","three"],"boolSlice":[]}`
+	req, _ := http.NewRequest("POST", "/numbers", bytes.NewBufferString(oParams))
+	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("Content-Length", strconv.Itoa(len(oParams)))
+
+	resp := httptest.NewRecorder()
+	s.ServeHTTP(resp, req)
+
+	assert.Equal(t, 200, resp.Code)
+	assert.JSONEq(t, expected, resp.Body.String())
 }
 
 // TODO

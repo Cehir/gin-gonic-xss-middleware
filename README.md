@@ -8,7 +8,7 @@ The default is to the strictest policy - StrictPolicy()
 
 ## Installation
 
-`go get -u github.com/araujo88/gin-gonic-xss-middleware` <br>
+`go get -u github.com/Cehir/gin-gonic-xss-middleware` <br>
 `go mod tidy`
 
 ## How To Use it?
@@ -21,7 +21,7 @@ Uses the Bluemonday strictest policy - StrictPolicy()
 package main
 
 import (
-    xss "github.com/araujo88/gin-gonic-xss-middleware"
+    xss "github.com/Cehir/gin-gonic-xss-middleware"
     "github.com/gin-gonic/gin"
 )
 
@@ -51,7 +51,7 @@ Uses Bluemonday UGCPolicy
 package main
 
 import (
-    xss "github.com/araujo88/gin-gonic-xss-middleware"
+    xss "github.com/Cehir/gin-gonic-xss-middleware"
     "github.com/gin-gonic/gin"
 )
 
@@ -95,7 +95,7 @@ A future plan is have a feature to store all user submitted data intact and have
 
 ## Acknowledgements
 
-Thanks to dvwright (https://github.com/dvwright/xss-mw) from which this repository was forked.
+Thanks to araujo88 (https://github.com/araujo88/gin-gonic-xss-middleware) from which this repository was forked.
 
 https://github.com/goware/jsonp <br>
 https://github.com/appleboy/gin-jwt/tree/v2.1.1 <br>
